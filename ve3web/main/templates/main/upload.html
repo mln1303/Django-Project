@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV - CSV Guru</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="{% static 'images/csv.png' %}" alt="CSV Guru Logo" width="100">
+            <h1>CSV Guru</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Unleash the Insights Hidden in Your Data</h2>
+        <p>Upload your CSV files and unlock a treasure trove of knowledge!</p>
+        
+        <p>Our user-friendly platform makes it easy to transform your raw data into actionable insights. Simply select your CSV file below, and click 'Upload'.</p>
+        
+        <form id="uploadForm" enctype="multipart/form-data" action="{% url 'upload' %}" method="post">
+            {% csrf_token %}
+            <input type="file" id="fileElem" name="file" accept=".csv">
+            <button type="submit" class="btn">Upload CSV</button>
+        </form>
+        
+        <h3>Here's what you can expect:</h3>
+        <ul>
+            <li>Effortless Data Exploration: No coding required! Explore your data with intuitive visualizations and interactive charts.</li>
+            <li>Powerful Statistical Analysis: Gain a deeper understanding of your data with key metrics like averages, medians, correlations, and more.</li>
+            <li>Uncover Hidden Trends: Identify patterns and relationships within your data that might have gone unnoticed.</li>
+            <li>Data-Driven Decisions: Make informed choices based on the insights you discover.</li>
+        </ul>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Contact: info@csvguru.com | Phone: +1234567890</p>
+            <p>Address: 123 Data Drive, Suite 100, Tech City, TX 75001</p>
+            <p>&copy; 2024 CSV Guru. All rights reserved.</p>
+            <p>Customer Reviews:</p>
+            <ul>
+                <li>"CSV Guru transformed our data analysis process. Highly recommend!" - John D.</li>
+                <li>"A must-have tool for anyone working with data. Easy to use and powerful." - Sarah W.</li>
+                <li>"The insights we gained were invaluable. Thank you, CSV Guru!" - Mark R.</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

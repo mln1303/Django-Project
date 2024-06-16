@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handle Missing Values</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Handle Missing Values</h1>
+        <h3>Missing values in your data</h3>
+        <div class="missing-values-table">
+            {{ missing_values|safe }}
+        </div>
+
+        <h2>Choose an action to handle missing values:</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="column">Select Column:</label>
+            <select id="column" name="column" required>
+                {% for column in columns %}
+                    <option value="{{ column }}">{{ column }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="action">Select Action:</label>
+            <select id="action" name="action" required>
+                <option value="drop">Drop Rows with Missing Values</option>
+                <option value="fill">Fill Missing Values</option>
+                <option value="interpolate">Interpolate Missing Values</option>
+            </select>
+            <br>
+            <label for="fill_value">Fill Value (if applicable):</label>
+            <input type="text" id="fill_value" name="fill_value">
+            <br>
+            <button type="submit" class="btn">Apply</button>
+        </form>
+        <a href="{% url 'success' filename %}" class="btn btn-primary">Back to Success Page</a>
+    </div>
+</body>
+</html>

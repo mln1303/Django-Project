@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualize Data</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container" id="visualize-data">
+        <h1>Visualizations of Data</h1>
+        {% for plot_filename, column_name in plot_columns %}
+            <div class="plot-container">
+                <img src="{{ MEDIA_URL }}{{ plot_filename }}" alt="{{ column_name }} Histogram">
+                <h3>{{ column_name }} Histogram</h3>
+            </div>
+        {% endfor %}
+        <a href="{% url 'success' filename %}" class="btn btn-primary">Back to Success Page</a>
+    </div>
+</body>
+</html>
+

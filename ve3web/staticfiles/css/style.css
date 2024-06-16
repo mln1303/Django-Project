@@ -1,0 +1,137 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: lavender; /* Lavender background */
+    color: #333; /* Main text color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+header {
+    background-color: #e0ffe0; /* Very light green background for header */
+    color: #007f00; /* Darker green text color */
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #007f00;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: #c2ffc2; /* Light green hover color */
+}
+
+.footer {
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.5em; /* Larger font size for main headings */
+}
+
+h2 {
+    font-size: 1.5em; /* Medium font size for secondary headings */
+}
+
+h3 {
+    color: #007f00; /* Dark green link color */
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007f00;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #005a00; /* Darker green hover color */
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form button {
+    cursor: pointer;
+}
+
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+#drop-area.drag {
+    border-color: #007f00; /* Green border color */
+    background-color: #fff;
+}
+
+#drop-box {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #007f00; /* Green dashed border for drop box */
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    color: #007f00;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#drop-box img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}

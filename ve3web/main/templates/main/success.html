@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Success!</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="success-container">
+        <h1>Upload Success</h1>
+        <p>Your CSV file has been uploaded and is ready for exploration. Let's dive into your data:</p>
+        
+        <div class="functionalities">
+            <div class="function-block">
+                <h3><strong>Preview Your Data:</strong></h3>
+                <p>Get a quick glimpse of the first few rows to familiarize yourself with the format.</p>
+                <a href="{% url 'first_rows' filename %}" class="btn">View First Rows</a>
+            </div>
+            <div class="function-block">
+                <h3><strong>Explore Statistics:</strong></h3>
+                <p> Analyze key metrics like averages, medians, and standard deviations to understand your data's central tendencies and spread.</p>
+                <a href="{% url 'statistics' filename %}" class="btn">View Statistics</a>
+            </div>
+            <div class="function-block">
+                <h3><strong>Handle Missing Values:</strong></h3>
+                <p>Handle Missing Values: Identify and address missing data points with various cleaning techniques to ensure data integrity.</p>
+                <a href="{% url 'handle_missing_values' filename %}" class="btn">Handle Missing Values</a>
+            </div>
+            <div class="function-block">
+                <h3><strong>Visualize Your Data:</strong></h3>
+                <p>Visualize Your Data: Create stunning charts and graphs to uncover trends, relationships, and patterns that might be difficult to spot in raw numbers.</p>
+                <a href="{% url 'visualize_data' filename %}" class="btn">Visualize Data</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
